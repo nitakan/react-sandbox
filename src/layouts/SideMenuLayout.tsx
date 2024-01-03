@@ -1,4 +1,4 @@
-import { Box, HStack, Link, LinkProps, Stack } from "@chakra-ui/react";
+import { Box, HStack, Link, LinkProps, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 type MenuData = {
@@ -23,9 +23,15 @@ export const menus: Array<MenuData> = [
 const HoverLink = (props: LinkProps) => {
     const currentPath = window.location.pathname;
     const isActive = props.href === currentPath;
-    if (isActive) return <Box p={2} bg='gray.200' {...props}>
-        {props.children}
-    </Box>;
+    if (isActive) {
+        return (
+            <Box p={2} {...props}>
+                <Text fontWeight='bold'>
+                    {props.children}
+                </Text>
+            </Box>
+        );
+    }
     return <Link
         rounded='base'
         _hover={{ bg: 'gray.200' }}
@@ -37,7 +43,11 @@ const HoverLink = (props: LinkProps) => {
 const Navigation = () => {
     return (
         <Stack as='nav'>
-            {menus.map((menu) => <HoverLink href={menu.path}>{menu.name}</HoverLink>)};
+            {menus.map((menu) =>
+                <HoverLink href={menu.path}>
+                    {menu.name}
+                </HoverLink>
+            )};
         </Stack>
     );
 };

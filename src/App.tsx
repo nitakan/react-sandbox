@@ -6,7 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-import CounterApp from './pages/CounterApp';
+import CounterPage from './pages/CounterPage';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const Router = () => {
@@ -15,7 +15,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/counter" element={<CounterApp />} />
+          <Route path="/counter" element={<CounterPage />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
