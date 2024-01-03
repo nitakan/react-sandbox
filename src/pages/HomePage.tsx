@@ -17,17 +17,16 @@ const HomePage: React.FC = () => {
                                 href={menu.path}
                                 _hover={{ bg: 'gray.200' }}
                                 width={'100%'}
+                                key={menu.path}
                             >
                                 <Card p={8} _hover={{ bg: 'gray.200' }}>
                                     <HStack>
 
                                         <VStack spacing={4} align={'start'}>
 
-                                            <Text>
-                                                <Heading as='h2' size='md'>
-                                                    {menu.name}
-                                                </Heading>
-                                            </Text>
+                                            <Heading as='h2' size='md'>
+                                                {menu.name}
+                                            </Heading>
                                             <Text>
                                                 {menu.description}
                                             </Text>

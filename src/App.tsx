@@ -8,6 +8,7 @@ import {
 
 import CounterPage from './pages/CounterPage';
 import { ChakraProvider } from '@chakra-ui/react';
+import CountDownPage from './pages/CountDownPage';
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/counter" element={<CounterPage />} />
+          <Route path="/countdown" element={<CountDownPage />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

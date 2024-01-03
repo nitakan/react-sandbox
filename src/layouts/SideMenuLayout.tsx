@@ -18,6 +18,11 @@ export const menus: Array<MenuData> = [
         path: "/counter",
         description: "Stateを試してみる用",
     },
+    {
+        name: "Count Down",
+        path: "/countdown",
+        description: "カウントダウン",
+    }
 ];
 
 const HoverLink = (props: LinkProps) => {
@@ -44,7 +49,7 @@ const Navigation = () => {
     return (
         <Stack as='nav'>
             {menus.map((menu) =>
-                <HoverLink href={menu.path}>
+                <HoverLink href={menu.path} key={menu.path}>
                     {menu.name}
                 </HoverLink>
             )};
