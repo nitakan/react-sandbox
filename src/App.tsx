@@ -1,18 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from './pages/HomePage';
 
-function App() {
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+import CounterApp from './pages/CounterApp';
+import { ChakraProvider } from '@chakra-ui/react';
+
+const Router = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world,
-        </p>
-      
-      </header>
-    </div>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/counter" element={<CounterApp />} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
-}
+};
 
-export default App;
+
+
+export default Router;
